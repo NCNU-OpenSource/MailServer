@@ -46,7 +46,7 @@
 </code></pre>
 
 ## mailserver觀念
-
+http://linux.vbird.org/linux_server/0380mail//mail-flow.gif
 ### MUA(Mail User Agent)
 編寫信件或收取信件的平台/程式
 ### MTA(Mail Transfer Agent)
@@ -67,8 +67,12 @@ iptables -A INPUT -p TCP -i $EXTIF --dport 143  --sport 1024:65534 -j ACCEPT
 iptables -A INPUT -p TCP -i $EXTIF --dport 110  --sport 1024:65534 -j ACCEPT
 
 ## 修改main.cf的參數
-每次改動之後都要 sudo postfix restart
+每次改動之後都要 sudo postfix restart 
 位置:/etc/postfix/main.cf
-找到 relayhost =
-改成 relayhost = [ms1.hinet.net]
+<pre>
+#找到 
+relayhost =
+#改成 
+relayhost = [ms1.hinet.net]
+</code></pre>
 
